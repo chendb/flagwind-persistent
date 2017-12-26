@@ -1,12 +1,5 @@
 package com.flagwind.persistent.model;
 
-/**
- * 
-* @Description: 单条查询项
-* @author chendb
-* @date 2015年10月5日 下午4:07:05 
-*
- */
 public class SingleClause implements Clause {
 	private String name;
 	private Object[] values;

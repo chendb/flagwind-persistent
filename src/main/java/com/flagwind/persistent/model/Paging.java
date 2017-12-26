@@ -4,11 +4,7 @@ import java.io.Serializable;
 
 
 
-/**
- * 
- * @@Description：分页
- * @author：chendb @since：2015-9-16
- */
+
 public class Paging implements Serializable {
 
 	private static final long serialVersionUID = 754828768811350476L;

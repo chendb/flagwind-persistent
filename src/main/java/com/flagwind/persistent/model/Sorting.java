@@ -3,13 +3,6 @@ package com.flagwind.persistent.model;
 import org.apache.commons.lang3.StringUtils;
 
 
-/**
- * 
- * @Description: 排序 
- * @author chendb  
- * @date 2016年9月28日 下午1:34:43 
- *
- */
 
 public class Sorting
 {
