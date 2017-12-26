@@ -71,8 +71,8 @@
 					<additionalparam>-Xdoclint:none</additionalparam>
 					<charset>${project.build.sourceEncoding}</charset>
 					<encoding>${project.build.sourceEncoding}</encoding>
-					<outputDirectory>${basedir}</outputDirectory>
-					<reportOutputDirectory>${basedir}</reportOutputDirectory>
+					<outputDirectory>${basedir}/target</outputDirectory>
+					<reportOutputDirectory>${basedir}/target</reportOutputDirectory>
 				</configuration>
 				<executions>
 					<execution>
