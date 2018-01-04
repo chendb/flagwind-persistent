@@ -9,20 +9,30 @@ public class Paging implements Serializable {
 
 	private static final long serialVersionUID = 754828768811350476L;
 
-	// 总条数
+	/**
+	 * 总条数
+	 */
 	private Long totalCount;
-	// 页码
+
+	/**
+	 * 页码
+	 */
 	private Long pageIndex;
-	// 每页显示多少条
+
+	/**
+	 * 每页显示多少条
+	 */
 	private long pageSize;
-	
-	
+
+	/**
+	 * 是否启用统计总数
+	 */
 	private boolean enableTotalCount;
 
 
 
 	public Paging() {
-		this(1l, 10l);
+		this(1L, 10L);
 	}
 
 	public Paging(Long pageIndex, Long pageSize) {
@@ -31,7 +41,7 @@ public class Paging implements Serializable {
 
 	public Paging(long pageIndex, long pageSize, long totalCount) {
 		if (pageSize < 1) {
-			pageSize = 10l;
+			pageSize = 10L;
 		}
 
 		this.pageSize = pageSize;

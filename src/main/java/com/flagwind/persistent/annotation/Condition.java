@@ -11,9 +11,13 @@ import java.lang.annotation.Target;
 import com.flagwind.persistent.model.ClauseCombine;
 
 
+/**
+ * 条件注解
+ */
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ TYPE, METHOD, FIELD })
 public @interface Condition {
-	  public String name() default "";
-	  public ClauseCombine combine() default ClauseCombine.And;
+	String name() default "";
+
+	ClauseCombine combine() default ClauseCombine.And;
 }

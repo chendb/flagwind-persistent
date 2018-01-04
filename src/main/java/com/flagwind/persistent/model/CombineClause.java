@@ -3,9 +3,13 @@ package com.flagwind.persistent.model;
 import java.util.ArrayList;
 import java.util.Collection;
 
+/**
+ * @author chendb
+ */
 public class CombineClause extends ArrayList<Clause>implements Clause {
 
 	private static final long serialVersionUID = 7081878195945581519L;
+
 	private ClauseCombine combine;
 
 	public CombineClause(ClauseCombine combin) {

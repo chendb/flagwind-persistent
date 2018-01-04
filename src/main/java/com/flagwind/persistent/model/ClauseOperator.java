@@ -1,5 +1,9 @@
 package com.flagwind.persistent.model;
 
+/**
+ * @author chendb
+ */
+
 public enum ClauseOperator {
 	// 等于
 	Equal("=", "等于"),

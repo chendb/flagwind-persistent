@@ -1,5 +1,8 @@
 package com.flagwind.persistent.model;
 
+/**
+ * @author chendb
+ */
 public class SingleClause implements Clause {
 	private String name;
 	private Object[] values;
