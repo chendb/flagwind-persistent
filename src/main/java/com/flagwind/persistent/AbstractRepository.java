@@ -121,4 +121,11 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	 * @return 实体集合
 	 */
 	List<E> getAll();
+
+   /**
+	 * 聚合查询
+	 * @param clause 聚合查询条件
+	 * @return
+	 */
+	List<E> aggregate(Clause clause);
 }
