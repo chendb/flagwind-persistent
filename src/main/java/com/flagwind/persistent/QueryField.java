@@ -1,6 +1,10 @@
 package com.flagwind.persistent;
 
-public class AggregateField {
+/**
+ * 查询字段定义
+ */
+public class QueryField {
+
     private String column;
     private String alias;
     private AggregateType type;

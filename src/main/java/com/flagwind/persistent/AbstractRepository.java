@@ -2,6 +2,8 @@ package com.flagwind.persistent;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import com.flagwind.persistent.model.Paging;
 import com.flagwind.persistent.model.Sorting;
 import com.flagwind.persistent.model.Clause;
@@ -122,10 +124,14 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	 */
 	List<E> getAll();
 
-   /**
-	 * 聚合查询
-	 * @param clause 聚合查询条件
+	/**
+	 * 选择性查询
+	 * @param table 表名
+	 * @param fields 字段
+	 * @param clause 条件
+	 * @param sortings 排序
 	 * @return
 	 */
-	List<E> aggregate(Clause clause);
-}
+	List<Map<String,Object>> querySelective(String table, List<QueryField> fields, Clause clause, Sorting[] sortings);
+
+ }
