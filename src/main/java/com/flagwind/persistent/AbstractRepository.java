@@ -114,9 +114,10 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	 * @param clause 查询条件
 	 * @param startIndex 开始索引
 	 * @param endIndex 结束索引
+	 * @param sorts 排序信息
 	 * @return 实体集合
 	 */
-	List<E> take(Clause clause, int startIndex, int endIndex);
+	List<E> take(Clause clause, int startIndex, int endIndex, Sorting[] sorts);
 
 	/**
 	 * 查询所有实体信息

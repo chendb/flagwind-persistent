@@ -2,76 +2,63 @@ package com.flagwind.persistent.model;
 
 import org.apache.commons.lang3.StringUtils;
 
-
-
 /**
  * @author chendb
  */
-public class Sorting
-{
- 
+public class Sorting {
+
 	private SortingMode mode;
 	private String[] fields;
- 
 
-	 
-	public Sorting()
-	{
+	public Sorting() {
 	}
 
-	public Sorting(String...fields)  
-	{
-		 this(SortingMode.Ascending, fields);
+	public Sorting(String... fields) {
+		this(SortingMode.Ascending, fields);
 	}
 
-	public Sorting(SortingMode mode, String...fields)
-	{
-		if(fields == null || fields.length == 0)
+
+
+	public Sorting(SortingMode mode, String... fields) {
+		if (fields == null || fields.length == 0)
 			throw new IllegalArgumentException("fields");
 
 		this.setMode(mode);
 		this.fields = fields;
 	}
- 
 
-	public  String getFieldsText()
-	{
-	 
-			if(this.fields == null || this.fields.length < 1)
-				return "";
-			
-			return StringUtils.join(this.fields, ",");
- 
-	 
-	}
- 
-	public void setFieldsText(String value)
-	{
-	 
-			if(StringUtils.isBlank(value))
-				throw new NullPointerException("fieldText");
+	public String getFieldsText() {
 
-			this.fields = value.split(",");
-		 
+		if (this.fields == null || this.fields.length < 1)
+			return "";
+
+		return StringUtils.join(this.fields, ",");
+
 	}
 
-	public void  setFields(String[] fields)
-	{
- 
-			if(fields == null || fields.length == 0)
-				throw new IllegalArgumentException("fields");
+	public void setFieldsText(String value) {
 
-			this.fields = fields;
-	 
+		if (StringUtils.isBlank(value))
+			throw new NullPointerException("fieldText");
+
+		this.fields = value.split(",");
+
 	}
 
-	public String[] getFields()
-	{
-	 
-			return this.fields;
-		 
+	public void setFields(String[] fields) {
+
+		if (fields == null || fields.length == 0)
+			throw new IllegalArgumentException("fields");
+
+		this.fields = fields;
+
 	}
-	
+
+	public String[] getFields() {
+
+		return this.fields;
+
+	}
 
 	public SortingMode getMode() {
 		return mode;
@@ -81,13 +68,11 @@ public class Sorting
 		this.mode = mode;
 	}
 
-	public static enum SortingMode
-	{
+	public static enum SortingMode {
 
-		Ascending,
-		Descending,
+		Ascending, Descending,
 	}
-	
+
 	@Override
 	public String toString() {
 
@@ -99,5 +84,17 @@ public class Sorting
 		else
 			return getFieldsText() + (getMode() == null ? "" : "  DESC");
 	}
- 
+
+	// region 静态构造方法
+	
+	public static Sorting ascending(String... fields) {
+		return new Sorting(SortingMode.Ascending, fields);
+	}
+
+	public static Sorting descending(String... fields) {
+		return new Sorting(SortingMode.Descending, fields);
+	}
+
+	// endregion
+
 }

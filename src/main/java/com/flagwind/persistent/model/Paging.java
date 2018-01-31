@@ -2,9 +2,6 @@ package com.flagwind.persistent.model;
 
 import java.io.Serializable;
 
-
-
-
 public class Paging implements Serializable {
 
 	private static final long serialVersionUID = 754828768811350476L;
@@ -29,8 +26,6 @@ public class Paging implements Serializable {
 	 */
 	private boolean enableTotalCount;
 
-
-
 	public Paging() {
 		this(1L, 10L);
 	}
@@ -49,9 +44,6 @@ public class Paging implements Serializable {
 		this.pageIndex = pageIndex;
 		this.enableTotalCount = true;
 	}
-
-
-
 
 	/** 返回每页的条数 */
 
@@ -77,7 +69,6 @@ public class Paging implements Serializable {
 
 		return Math.round(Math.ceil((double) totalCount / pageSize));
 	}
-	
 
 	public boolean getEnableTotalCount() {
 		return enableTotalCount;
@@ -94,21 +85,33 @@ public class Paging implements Serializable {
 	public void setTotalCount(Long totalCount) {
 		this.totalCount = totalCount;
 	}
-	
+
 	public void setEnableTotalCount(boolean enableTotalCount) {
 		this.enableTotalCount = enableTotalCount;
 	}
 
-
-
-
-
 	@Override
 	public String toString() {
-		return "Paging [totalCount=" + totalCount 
-		+ ", pageIndex=" + pageIndex 
-		+ ", pageSize=" + pageSize
-		+ ", enableTotalCount=" + enableTotalCount + "]";
+		return "Paging [totalCount=" + totalCount + ", pageIndex=" + pageIndex + ", pageSize=" + pageSize
+				+ ", enableTotalCount=" + enableTotalCount + "]";
 	}
+
+	// region 静态构造方法
+
+	/**
+	 * 构建分页条件
+	 */
+	public static Paging build(Long pageIndex, Long pageSize) {
+		return new Paging(pageIndex, pageSize);
+	}
+
+	/**
+	 * 构建分页条件
+	 */
+	public static Paging build() {
+		return new Paging();
+	}
+
+	// endregion
 
 }
