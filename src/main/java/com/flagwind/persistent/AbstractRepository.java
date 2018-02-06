@@ -133,6 +133,6 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	 * @param sortings 排序
 	 * @return
 	 */
-	List<Map<String,Object>> querySelective(String table, List<QueryField> fields, Clause clause, Sorting[] sortings);
+	List<Map<String,Object>> querySelective(String table, List<QueryField> fields, Clause clause,Integer startIndex,Integer endIndex, Sorting[] sortings);
 
  }
