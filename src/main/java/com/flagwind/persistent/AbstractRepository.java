@@ -19,21 +19,18 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	/**
 	 * 单条关联获取
 	 * @param id 主键
-	 * @return
 	 */
 	E seekById(ID id);
 
 	/**
 	 * 条件关联查询
 	 * @param clause 查询条件
-	 * @return
 	 */
 	List<E> seek(Clause clause);
 
 	/**
 	 * 单条获取
 	 * @param id 主键
-	 * @return
 	 */
 	E getById(ID id);
 
@@ -81,14 +78,14 @@ public interface AbstractRepository<E, ID extends Serializable> {
 
 	/**
 	 * 条件删除
-	 * @param clause
-	 * @return
+	 * @param clause 条件短语
+	 * @return 影响条件
 	 */
 	int delete(Clause clause);
 
 	/**
 	 * 数量统计
-	 * @param clause
+	 * @param clause 条件短语
 	 * @return 数量
 	 */
 	long count(Clause clause);
@@ -96,7 +93,6 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	/**
 	 * 条件查询
 	 * @param clause 查询条件
-	 * @return
 	 */
 	List<E> query(Clause clause);
 
@@ -130,9 +126,8 @@ public interface AbstractRepository<E, ID extends Serializable> {
 	 * @param table 表名
 	 * @param fields 字段
 	 * @param clause 条件
-	 * @param sortings 排序
-	 * @return
+	 * @param sorts 排序
 	 */
-	List<Map<String,Object>> querySelective(String table, List<QueryField> fields, Clause clause,Integer startIndex,Integer endIndex, Sorting[] sortings);
+	List<Map<String,Object>> querySelective(String table, List<QueryField> fields, Clause clause,Integer startIndex,Integer endIndex, Sorting[] sorts);
 
  }
